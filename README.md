@@ -36,7 +36,7 @@ The Bookworm app is a SwiftUI-based app designed to track books you've read and 
 
 To use the Bookworm app:
 
-1. Clone the repository: git clone https://github.com/paulhudson/Bookworm.git
+1. Clone the repository: git clone https://github.com/ricardonovelot/Bookworms.git
 2. Open the project in Xcode.
 3. Choose a target simulator or device.
 4. Run the application.
