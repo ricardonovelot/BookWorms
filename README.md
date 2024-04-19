@@ -23,8 +23,8 @@ The Bookworm app is a SwiftUI-based app designed to track books you've read and 
 
 </td>
 <td>
-
-![301410291-fc8e8e72-2fd6-4e6d-a003-f7da85554e1a-6](https://github.com/paulhudson/Bookworm-SwiftUIDay16Challenge/assets/84286086/7b4451be-9299-4608-8ffa-0040981a5dc7)
+  
+![export951CE690-2934-48FE-A0C6-6A43EE90CAE1](https://github.com/ricardonovelot/BookWorms/assets/84286086/b792b98e-516b-4435-b305-e1f33ece8049)
 
 </td>
 </tr>
