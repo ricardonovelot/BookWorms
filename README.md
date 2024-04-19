@@ -1,4 +1,4 @@
-# Bookworm App
+# Bookworms
 
 <table>
 <tr>
