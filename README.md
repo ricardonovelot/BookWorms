@@ -11,10 +11,8 @@ The Bookworm app is a SwiftUI-based app designed to track books you've read and 
 ### Features
 
 - **Book Entries:** Users can enter details about the books they have read.
-- **Star Rating Widget:** Custom component for users to rate each book.
-- **Books List:** View and manage a list of books using SwiftData.
-- **Sorting and Deleting:** Features to sort and delete book entries through SwiftData queries.
-- **Dynamic UI Interactions:** Using `@Binding`, `@Query`, and other SwiftUI techniques for a responsive user experience.
+- **Books List:** View and manage a list of books.
+- **Sorting and Deleting:** Features to sort and delete book entries.
 
 ### Technical Highlights
 
@@ -40,7 +38,6 @@ To use the Bookworm app:
 2. Open the project in Xcode.
 3. Choose a target simulator or device.
 4. Run the application.
-Note: Xcode and an iOS simulator or device are required to run this app.
 
 ## License
 
