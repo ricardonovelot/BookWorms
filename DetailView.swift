@@ -7,6 +7,7 @@
 
 import SwiftData
 import SwiftUI
+import Glur
 
 struct DetailView: View {
     @Environment(\.modelContext) var modelContext
@@ -15,31 +16,62 @@ struct DetailView: View {
     
     let book: Book
     
+    var formattedDate : String {
+        book.date.formatted(date: .abbreviated, time: .omitted)
+    }
     
     var body: some View {
-        ScrollView{
-            ZStack(alignment: .bottomTrailing, content: {
-                Image(book.genre)
-                    .resizable()
-                    .scaledToFit()
+        ScrollView {
+            VStack(alignment: .leading) {
+                ZStack(alignment: .bottomLeading) {
+                    Image(book.genre)
+                        .resizable()
+                        .scaledToFit()
+                        .glur(radius: 30.0, // The total radius of the blur effect when fully applied.
+                              offset: 0.5, // The distance from the view's edge to where the effect begins, relative to the view's size.
+                              interpolation: 0.5, // The distance from the offset to where the effect is fully applied, relative to the view's size.
+                              direction: .down // The direction in which the effect is applied.
+                        )
+                        .cornerRadius(12)
+                        .shadow(color: Color(UIImage(named:book.genre)?.averageColor ?? .clear), radius: 2)
+                     
+                    VStack(alignment: .leading){
+                        Text(book.title)
+                            .fontWeight(.bold)
+                            .font(.largeTitle)
+                        Text(book.author.isEmpty ? "Unknown Author" : book.author)
+                            .font(.caption)
+                            .fontWeight(.semibold)
+                    }
+                    .foregroundColor(.white)
+                    .shadow(radius: 12)
+                    .padding([.top, .leading, .trailing], 16)
+                    .padding(.bottom, 12)
+                }
                 
-                Text(book.genre.uppercased())
-                    .fontWeight(.black)
-                    .padding(8)
-                    .foregroundStyle(.white)
-                    .background(.black.opacity(0.75))
-                    .clipShape(.capsule)
-                    .offset(x: -5, y: -5)
-            })
-            Text(book.author)
-                .font(.title)
-                .foregroundStyle(.secondary)
-            
-            Text(book.review)
-                .padding()
-            
-            RatingView(rating: .constant(book.rating))
-                .font(.largeTitle)
+                VStack (alignment: .leading, spacing: 8){
+                    Text("Review")
+                        .font(.headline) // Label the section for clarity
+                    .padding(.top)
+                    if !book.review.isEmpty {
+                        Text(book.review)
+                            .frame(maxWidth: .infinity,alignment: .leading)
+                            .padding()
+                            .background(Color(UIColor.secondarySystemBackground))
+                            .cornerRadius(8)
+                    }
+                    
+                    RatingView(rating: .constant(book.rating))
+                        .scaledToFit()
+                    
+                    Text("Reviewed on \(formattedDate)")
+                        .font(.subheadline)
+                        .foregroundColor(.secondary)
+                        .padding(.top,8)
+                    
+                }
+            }
+            .padding()
         }
         .navigationTitle(book.title)
         .navigationBarTitleDisplayMode(.inline)
@@ -67,7 +99,7 @@ struct DetailView: View {
     do{
         let config = ModelConfiguration(isStoredInMemoryOnly: true)
         let container = try ModelContainer(for: Book.self, configurations: config)
-        let example = Book(title: "TestBook", author: "TestAuthig", genre: "Fantasy", review: "This was great", rating: 4)
+        let example = Book(title: "Harry Potter", author: "", genre: "Fantasy", review: "", rating: 4)
         
         return DetailView(book: example)
             .modelContainer(container)

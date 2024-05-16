@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		8C0891BE2BA3EAD7005AA666 /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0891BD2BA3EAD7005AA666 /* RatingView.swift */; };
 		8C0891C02BA3F4E0005AA666 /* EmojiRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0891BF2BA3F4E0005AA666 /* EmojiRatingView.swift */; };
+		8C2976382BAA6C220020BA92 /* Glur in Frameworks */ = {isa = PBXBuildFile; productRef = 8C2976372BAA6C220020BA92 /* Glur */; };
+		8C29763A2BAAA6830020BA92 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2976392BAAA6830020BA92 /* Extensions.swift */; };
 		8C88CBEE2BA50154008D5BA7 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C88CBED2BA50154008D5BA7 /* DetailView.swift */; };
 		8CCB08B92BA3A49C00A7921B /* BookWormsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCB08B82BA3A49C00A7921B /* BookWormsApp.swift */; };
 		8CCB08BB2BA3A49C00A7921B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCB08BA2BA3A49C00A7921B /* ContentView.swift */; };
@@ -21,6 +23,7 @@
 /* Begin PBXFileReference section */
 		8C0891BD2BA3EAD7005AA666 /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
 		8C0891BF2BA3F4E0005AA666 /* EmojiRatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiRatingView.swift; sourceTree = "<group>"; };
+		8C2976392BAAA6830020BA92 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		8C88CBED2BA50154008D5BA7 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		8CCB08B52BA3A49C00A7921B /* BookWorms.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookWorms.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CCB08B82BA3A49C00A7921B /* BookWormsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookWormsApp.swift; sourceTree = "<group>"; };
@@ -36,6 +39,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C2976382BAA6C220020BA92 /* Glur in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -48,6 +52,7 @@
 				8C0891BF2BA3F4E0005AA666 /* EmojiRatingView.swift */,
 				8C0891BD2BA3EAD7005AA666 /* RatingView.swift */,
 				8C88CBED2BA50154008D5BA7 /* DetailView.swift */,
+				8C2976392BAAA6830020BA92 /* Extensions.swift */,
 				8CCB08B72BA3A49C00A7921B /* BookWorms */,
 				8CCB08B62BA3A49C00A7921B /* Products */,
 			);
@@ -98,6 +103,9 @@
 			dependencies = (
 			);
 			name = BookWorms;
+			packageProductDependencies = (
+				8C2976372BAA6C220020BA92 /* Glur */,
+			);
 			productName = BookWorms;
 			productReference = 8CCB08B52BA3A49C00A7921B /* BookWorms.app */;
 			productType = "com.apple.product-type.application";
@@ -126,6 +134,9 @@
 				Base,
 			);
 			mainGroup = 8CCB08AC2BA3A49C00A7921B;
+			packageReferences = (
+				8C2976362BAA6C220020BA92 /* XCRemoteSwiftPackageReference "Glur" */,
+			);
 			productRefGroup = 8CCB08B62BA3A49C00A7921B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -155,6 +166,7 @@
 				8CCB08BB2BA3A49C00A7921B /* ContentView.swift in Sources */,
 				8CCB08B92BA3A49C00A7921B /* BookWormsApp.swift in Sources */,
 				8CCB08C72BA3A63300A7921B /* Book.swift in Sources */,
+				8C29763A2BAAA6830020BA92 /* Extensions.swift in Sources */,
 				8C88CBEE2BA50154008D5BA7 /* DetailView.swift in Sources */,
 				8C0891BE2BA3EAD7005AA666 /* RatingView.swift in Sources */,
 				8C0891C02BA3F4E0005AA666 /* EmojiRatingView.swift in Sources */,
@@ -364,6 +376,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		8C2976362BAA6C220020BA92 /* XCRemoteSwiftPackageReference "Glur" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/joogps/Glur.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.4;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		8C2976372BAA6C220020BA92 /* Glur */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8C2976362BAA6C220020BA92 /* XCRemoteSwiftPackageReference "Glur" */;
+			productName = Glur;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 8CCB08AD2BA3A49C00A7921B /* Project object */;
 }

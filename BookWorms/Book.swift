@@ -7,14 +7,25 @@
 
 import Foundation
 import SwiftData
+import UIKit
+import SwiftUI
 
 @Model
 class Book{
+    
     var title: String
     var author: String
     var genre: String
     var review: String
     var rating: Int
+    var date = Date.now
+    var validData: Bool {
+        if title.isEmpty || author.isEmpty {
+            return false
+        } else {
+            return true
+        }
+    }
     
     init(title: String, author: String, genre: String, review: String, rating: Int) {
         self.title = title
@@ -24,4 +35,5 @@ class Book{
         self.rating = rating
     }
     
+
 }

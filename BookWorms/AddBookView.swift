@@ -17,6 +17,11 @@ struct AddBookView: View {
     @State private var genre = "Fantasy"
     @State private var review = ""
     
+    var hasValidData : Bool {
+        let fields = [title,author]
+        return fields.allSatisfy({ $0.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty })
+    }
+    
     let genres = ["Fantasy","Horror","Kids","Mystery","Romance"]
     
     var body: some View {
@@ -46,6 +51,7 @@ struct AddBookView: View {
                         modelContext.insert(newBook)
                         dismiss()
                     }
+                    .disabled(hasValidData)
                 }
             }
         }
